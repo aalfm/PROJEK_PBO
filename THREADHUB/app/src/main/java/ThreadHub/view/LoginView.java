@@ -188,8 +188,8 @@ public class LoginView {
         errLabel.setText("Username minimal 4 karakter");
         return;
       }
-      if (password.length() < 6) {
-        errLabel.setText("Password minimal 6 karakter");
+      if (password.length() < 8 || !password.matches("^(?=.*[a-zA-Z])(?=.*[0-9]).+$")) {
+        errLabel.setText("Password minimal 8 karakter (huruf dan angka)");
         return;
       }
 

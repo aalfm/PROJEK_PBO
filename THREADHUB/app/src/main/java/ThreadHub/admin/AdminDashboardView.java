@@ -647,6 +647,10 @@ public class AdminDashboardView {
                 errLabel.setText("Semua kolom wajib diisi.");
                 return;
             }
+            if (password.length() < 8 || !password.matches("^(?=.*[a-zA-Z])(?=.*[0-9]).+$")) {
+                errLabel.setText("Password minimal 8 karakter (huruf dan angka)");
+                return;
+            }
  
             int newId    = ds.generateUserId();
             User newUser = role.equals("Admin")
